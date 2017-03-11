@@ -30,3 +30,4 @@ firebase.auth().onAuthStateChanged(function(user) {
     console.log("User logged out");
   }
 });
+}
