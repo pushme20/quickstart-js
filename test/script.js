@@ -7,7 +7,7 @@ window.addEventListener('load', function(){
     console.log("signInWithPopup");
   });
 
-  var signOutButton = document.getElementById('signOutButton');
+  var signOutButton = document.getElementById('sign-out-button');
   signOutButton.addEventListener('click', function(){
     firebase.auth().signOut();
     console.log("signOut");
@@ -15,7 +15,7 @@ window.addEventListener('load', function(){
 });
 
 firebase.auth().onAuthStateChanged(function(user) {
-  if(user){
+  if (user) {
     // User is signed in.
     var displayName = user.displayName;
     var email = user.email;
@@ -25,13 +25,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     var uid = user.uid;
     var providerData = user.providerData;
     console.log(user.displayName);
-    // ...
-  }
-  else {
-    // User signed out
-    /// ...
+  } else {
+    // User is signed out.
     console.log("User logged out");
   }
-
-
 });
